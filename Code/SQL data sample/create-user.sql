@@ -1,3 +1,3 @@
-CREATE USER 'root'@'localhost' IDENTIFIED BY 'Asdasd123';
+CREATE USER 'demo'@'localhost' IDENTIFIED BY 'demo';
 
-GRANT ALL PRIVILEGES ON * . * TO 'root'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'demo'@'localhost';
