@@ -3,7 +3,7 @@
   <Resource name="jdbc/order_purchase" 
   			auth="Container" type="javax.sql.DataSource"
                maxActive="20" maxIdle="5" maxWait="10000"
-               username="root" password="Asdasd123" 
+               username="demo" password="demo" 
                driverClassName="com.mysql.cj.jdbc.Driver"
                url="jdbc:mysql://localhost:3306/order_purchase"/>
 
