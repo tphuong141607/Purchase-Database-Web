@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<f:metadata>
+  <f:event type="preRenderView" listener="#{customerController.loadCustomers()}"/>
+  <f:event type="preRenderView" listener="#{productCategoryController.loadCategories()}"/>
+  <f:event type="preRenderView" listener="#{productController.loadProducts()}"/>
+</f:metadata>
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet library="css" name="customizedStyle.css"/>
+	<title>Order Purchase Database</title>
+	
+</h:head>
+
+<h:body>
+
+	<div id="wrapper">
+		<div id="header">
+			<h2>Customer Table</h2>
+		</div>
+	</div>
+
+	<div id="container">
+
+		<div id="content">
+		
+			<h:messages globalOnly="true" />			
+			<h:button value="Add Customer" outcome="add-customer-form" styleClass="mybutton"/>			
+			<h:form>
+						
+			<h:dataTable value="#{customerController.customers}" var="tempCustomer"
+				styleClass="table" 
+				headerClass="table-header"
+				rowClasses="table-odd-row,table-even-row">
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">First Name</f:facet>
+
+					<!--  the value for each row -->
+					#{tempCustomer.firstName}
+				</h:column>
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Last Name</f:facet>
+
+					<!--  the value for each row -->
+					#{tempCustomer.lastName}
+				</h:column>
+				
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Phone Number</f:facet>
+
+					<!--  the value for each row -->
+					#{tempCustomer.phoneNum}
+				</h:column>
+				
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Address</f:facet>
+
+					<!--  the value for each row -->
+					#{tempCustomer.address}
+				</h:column>
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Email</f:facet>
+
+					<!--  the value for each row -->
+					#{tempCustomer.email}
+				</h:column>
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Action</f:facet>
+
+					<!--  the value for each row -->
+					<h:commandLink value="Update"
+						action="#{customerController.loadCustomer(tempCustomer.id) }"/>
+						|
+					<h:commandLink value="Delete"
+						onclick="if (!confirm('Are you sure you want to delete this customer?')) return false"
+						action="#{customerController.deleteCustomer(tempCustomer.id)}"/>
+					
+				</h:column>
+
+			</h:dataTable>
+
+			</h:form>
+
+		</div>
+		
+	</div>
+	
+	<div>
+		<br></br>
+		<br></br>
+		<br></br>
+	</div>
+	
+	
+	<div id="wrapper">
+		<div id="header">
+			<h2>Product Category Table</h2>
+		</div>
+	</div>
+
+
+	<div id="container">
+
+		<div id="content">		
+					
+			<h:messages globalOnly="true"/>
+			
+			<h:button value="Add Product Category" outcome="add-category-form" styleClass="mybutton" />			
+			<h:form>
+						
+			<h:dataTable value="#{productCategoryController.categories}" var="tempCategory"
+				styleClass="table" 
+				headerClass="table-header"
+				rowClasses="table-odd-row,table-even-row">
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Category ID</f:facet>
+
+					<!--  the value for each row -->
+					#{tempCategory.id}
+				</h:column>
+				
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Category</f:facet>
+
+					<!--  the value for each row -->
+					#{tempCategory.categoryName}
+				</h:column>
+				
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Action</f:facet>
+
+					<!--  the value for each row -->
+					<h:commandLink value="Update"
+						action="#{productCategoryController.loadCategory(tempCategory.id) }"/>
+						|
+					<h:commandLink value="Delete"
+						onclick="if (!confirm('Are you sure you want to delete this category?')) return false"
+						action="#{productCategoryController.deleteProductCategory(tempCategory.id)}"/>
+				</h:column>
+
+			</h:dataTable>
+
+			</h:form>
+
+		</div>
+	</div>
+	
+	<div>
+		<br></br>
+		<br></br>
+		<br></br>
+	</div>
+	
+	<div id="wrapper">
+		<div id="header">
+			<h2>Product Table</h2>
+		</div>
+	</div>
+
+	<div id="container">
+
+		<div id="content">
+					
+			<h:messages globalOnly="true" />			
+			<h:button value="Add Product" outcome="add-product-form" styleClass="mybutton"/>
+								
+			<h:form>
+						
+			<h:dataTable value="#{productController.products}" var="tempProduct"
+				styleClass="table" 
+				headerClass="table-header"
+				rowClasses="table-odd-row,table-even-row">
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Product Name</f:facet>
+
+					<!--  the value for each row -->
+					#{tempProduct.name}
+				</h:column>
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Description</f:facet>
+
+					<!--  the value for each row -->
+					#{tempProduct.description}
+				</h:column>
+				
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Price</f:facet>
+
+					<!--  the value for each row -->
+					#{tempProduct.price}
+				</h:column>
+				
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Category ID</f:facet>
+
+					<!--  the value for each row -->
+					#{tempProduct.categoryId}
+				</h:column>
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Action</f:facet>
+
+					<!--  the value for each row -->
+					<h:commandLink value="Update"
+						action="#{productController.loadProduct(tempProduct.id) }"/>
+						|
+					<h:commandLink value="Delete"
+						onclick="if (!confirm('Are you sure you want to delete this product?')) return false"
+						action="#{productController.deleteProduct(tempProduct.id)}"/>
+					
+				</h:column>
+
+			</h:dataTable>
+
+			</h:form>
+
+		</div>
+	</div>
+	
+
+</h:body>
+</html>

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Add Customers</title>
+	
+	<h:outputStylesheet library="css" name="customizedStyle.css"/>
+	
+</h:head>
+
+<h:body>
+
+	<div id="wrapper">
+		<div id="header">
+			<h2>Customer</h2>
+		</div>
+	</div>
+	
+	<div id="container">
+		<h3>Customer Table</h3>
+
+		<h:messages globalOnly="true" />
+
+		<h:form id="form" style="margin-top: 10px;" >
+			<h:panelGrid columns="3">
+			
+				<h:outputLabel>First name:</h:outputLabel> <h:inputText value="#{customer.firstName}" id="firstName" required="true"
+							requiredMessage="Your first name is mandatory."/> <h:message for="firstName" />
+	
+				<h:outputLabel>Last name:</h:outputLabel> <h:inputText value="#{customer.lastName}" id="lastName" required="true" 
+							requiredMessage="Your last name is mandatory."/> <h:message for="lastName" />
+				
+				<h:outputLabel>Phone Number:</h:outputLabel> <h:inputText value="#{customer.phoneNum}" id="phoneNum" required="true" 
+							requiredMessage="Your phone number is mandatory."/> <h:message for="phoneNum" />
+	
+				<h:outputLabel>Address:</h:outputLabel> <h:inputText value="#{customer.address}" id="address" /> <h:message for="address"/>
+				
+				<h:outputLabel>Email:</h:outputLabel> <h:inputText value="#{customer.email}" id="email" required="true"
+            				requiredMessage="Your email is mandatory."/> 	<h:message for="email"/>
+				
+				<h:outputLabel /> <h:commandButton value="Save" styleClass="save" action="#{customerController.addCustomer(customer)}"/>
+			
+			</h:panelGrid>
+		</h:form>
+
+		<div style="clear: both;"></div>
+
+		<p><h:outputLink value="list-customers.xhtml">Back to List</h:outputLink></p>
+
+	</div>	
+</h:body>
+</html>
+
