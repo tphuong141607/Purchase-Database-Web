@@ -50,7 +50,7 @@ Product Table after deleting the `Electronics category`
 
 2. Download and install Eclipse IDE for **Java EE Developers** [here](https://www.eclipse.org/downloads/packages/release/kepler/sr2/eclipse-ide-java-ee-developers)
 
-3. Open Esclipe
+3. Open Eclipse
 
 4. **Select** File --> Import --> Existing Projects into Workspace
 
