@@ -34,7 +34,7 @@ Because I set a Referential Integrity constraint between table Product and table
 <img src="https://github.com/tphuong141607/YesCode-Purchase-Web-Database/blob/master/Example%20Images/Delete%20Electronic%20Category.png" width="80%">
 
 #### Product Table
-<img src="https://github.com/tphuong141607/YesCode-Purchase-Web-Database/blob/master/Example%20Images/Product%20Category%20Table.png"  width="80%">
+<img src="https://github.com/tphuong141607/YesCode-Purchase-Database-Web/blob/master/Example%20Images/Product%20Table.png"  width="80%">
 
 Product Table after deleting the `Electronics category`
 <img src="https://github.com/tphuong141607/YesCode-Purchase-Web-Database/blob/master/Example%20Images/Product%20Table%20after%20Catedeletion.png"  width="80%">
