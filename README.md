@@ -1,9 +1,15 @@
-# YesCode-Purchase-Web-Database
+# The Purchase-Order Database Web Application
 
-This 
+This Database Web Application was built using JavaServer Faces (JSF), mySQL, Tomcat, HTML and simple CSS. The project was created on 12/18/2018.
+
 ## What is it?
 
-Similar to the iOS Calculator App, this program contains 5 basic mathematical operations including addition, subtraction, multiplication, division, and negation. The application is built using Java, JavaFX and SceneBuilder. 
+This project is a prototype that illustrates major features (create, retrieve, update, delete) of a database system. It includes a complete ER model, the relational database tables with sample data, a set of interesting SQL queries, and finally a user-friendly interface. 
+
+Check out the ER Diagram [Here](https://github.com/tphuong141607/YesCode-Purchase-Database-Web/blob/master/ERDiagram.pdf).
+This diagram is meant to explain the structure of the database that describes the purchasing process of products produced by a specific company.
+
+I learned much new useful information including Java Database Connectivity, MySQL language (queries, inserts, updates, and deletes), and high-level database design (ERD), and database normalization. 
 
 ## Example
 
